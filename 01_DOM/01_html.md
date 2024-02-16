@@ -1,0 +1,271 @@
+```html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+     <title>DOM 1 : baiscs</title>
+     <!-- text inside title tag is called text node(Document) -->
+
+     <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+     </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="heading">DOM learning on Chai aur Code<span style="display: none;"> test text</span></h1>
+
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+        </ul>
+    </div>
+
+    <pre>
+        console.log(document.baseURI)   // it is for base url 
+        console.log(document.links)    // to get all links 
+        console.log(document.links[2])    // to get 2nd link 
+        console.log(document.getElementById('id name')))    // to get about id's data   
+        document.getElementById('firstHeading').innerHTML="<h3>chai aur code<h3>  // h1's data changes 
+    </pre>
+
+    <pre>
+
+        document.getElementById('title').id    // it gives id
+
+        document.getElementById('title').class    // don't use .class it gives undefined
+
+        document.getElementById('title').className    // gives className
+
+        document.getElementById('title').getAttribute('class')  // gives class name 
+
+        document.getElementById('title').getAttribute('id')  // gives id name
+
+        document.getElementById('title')  // will give the entire tag containing id title 
+
+        const title = document.getElementById('title') // saved in variable const
+
+        title.style.backgroundColor = 'green' // will add bg color in title variable 
+
+        title.style.padding = '15px' // will add padding of 15px
+
+        title.style.borderRadius = '15px' // will add borderRadius of 15px
+
+        title.textContent //will show all text/words inside title or var. 
+
+        title.innerText //will not show other other tags text/data of titile var.
+
+        title.innerHTML //will show all words and tags name also used inside title variable 
+        
+        
+        document.getElementsByClassName('heading') // will give element data by class name
+
+    </pre>
+
+    <h2>Now working with querySelector()</h2>
+    <pre>
+
+    // querySelector(h1): it gives first h1 tag only not all h1 tags in the document
+
+    document.querySelector('input[type="password"]') 
+
+    document.querySelector('p') // gives 1st p tag 
+
+    document.querySelector('ul')  // gives 1st ul tag and its details 
+
+    const myul = document.querySelector('ul') // myul is vaiable here 
+
+    const turnGreenLi = document.querySelector('li') // 1st li stored in var. turnGreenLi 
+
+    turnGreenLi.style.color = 'red'  // 1st li's text color changes to red
+
+    turnGreenLi.style.backgroundColor = 'green' // 1st li's background color changes to green
+
+    turnGreenLi.style.padding = '10px' // 1st li's padding is now 10px
+
+    </pre>
+
+    <h2>Now working with querySelectorAll()</h2>
+    <pre>
+
+    document.querySelectorAll(.heading)  // it will selects element having class name .heading 
+
+    document.querySelectorAll('h2')  // it will selects all the h2 tags in form of NodeList
+
+    const myh2 = document.querySelectorAll('h2') // myh2 is variable 
+
+    const tempLiList =  document.querySelectorAll('li')// tempLiList is var. of 'li' with querySelectorAll; and here tempLiList gives all list data 
+
+    Note:: NodeList do not have all property of Array
+
+    document.getElementsByClassName('list-item') //if 'li' tags has class name(list-item) only then this code gives 'li' list names
+    
+
+    tempLiList.forEach( function(l) {
+        l.style.backgroundColor = 'green'
+    })
+    // this code makes all 'tempLiList' var. i.e li's background-color to green 
+    </pre>
+
+    <h2>HTML collection and NodeList</h2>
+
+    <pre>
+
+    document.getElementsByClassName('list-item') // it gives html collection
+
+    document.querySelectorAll('h2') //it gives output in form of NodeList
+
+    </pre>
+
+    <h2>Converting any variale(contains html collection/nodeList) to Array </h2>
+
+    <pre>
+
+    const tempClassList = document.getElementsByClassName('list-item') // html collection
+
+    Array.from(tempClassList) // it converts variable tempClassList to Array  
+ 
+    // we can also store it into vaiable
+
+    const myConvertedArray = Array.from(tempClassList) 
+
+    ***Using var. myConvertedArray, we can use forEach loop ******
+ 
+    myConvertedArray.forEach(function(li) {
+        li.style.color = "orange"
+    })
+    // now it changes text color to orange 
+    </pre>
+</body>
+</html>
+```
+
+```
+output:
+DOM learning on Chai aur Code
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit amet consectetur.
+
+One
+Two
+Three
+Four
+        console.log(document.baseURI)   // it is for base url 
+        console.log(document.links)    // to get all links 
+        console.log(document.links[2])    // to get 2nd link 
+        console.log(document.getElementById('id name')))    // to get about id's data   
+        document.getElementById('firstHeading').innerHTML="
+chai aur code
+  // h1's data changes 
+    
+
+        document.getElementById('title').id    // it gives id
+
+        document.getElementById('title').class    // don't use .class it gives undefined
+
+        document.getElementById('title').className    // gives className
+
+        document.getElementById('title').getAttribute('class')  // gives class name 
+
+        document.getElementById('title').getAttribute('id')  // gives id name
+
+        document.getElementById('title')  // will give the entire tag containing id title 
+
+        const title = document.getElementById('title') // saved in variable const
+
+        title.style.backgroundColor = 'green' // will add bg color in title variable 
+
+        title.style.padding = '15px' // will add padding of 15px
+
+        title.style.borderRadius = '15px' // will add borderRadius of 15px
+
+        title.textContent //will show all text/words inside title or var. 
+
+        title.innerText //will not show other other tags text/data of titile var.
+
+        title.innerHTML //will show all words and tags name also used inside title variable 
+        
+        
+        document.getElementsByClassName('heading') // will give element data by class name
+
+    
+Now working with querySelector()
+
+    // querySelector(h1): it gives first h1 tag only not all h1 tags in the document
+
+    document.querySelector('input[type="password"]') 
+
+    document.querySelector('p') // gives 1st p tag 
+
+    document.querySelector('ul')  // gives 1st ul tag and its details 
+
+    const myul = document.querySelector('ul') // myul is vaiable here 
+
+    const turnGreenLi = document.querySelector('li') // 1st li stored in var. turnGreenLi 
+
+    turnGreenLi.style.color = 'red'  // 1st li's text color changes to red
+
+    turnGreenLi.style.backgroundColor = 'green' // 1st li's background color changes to green
+
+    turnGreenLi.style.padding = '10px' // 1st li's padding is now 10px
+
+    
+Now working with querySelectorAll()
+
+    document.querySelectorAll(.heading)  // it will selects element having class name .heading 
+
+    document.querySelectorAll('h2')  // it will selects all the h2 tags in form of NodeList
+
+    const myh2 = document.querySelectorAll('h2') // myh2 is variable 
+
+    const tempLiList =  document.querySelectorAll('li')// tempLiList is var. of 'li' with querySelectorAll; and here tempLiList gives all list data 
+
+    Note:: NodeList do not have all property of Array
+
+    document.getElementsByClassName('list-item') //if 'li' tags has class name(list-item) only then this code gives 'li' list names
+    
+
+    tempLiList.forEach( function(l) {
+        l.style.backgroundColor = 'green'
+    })
+    // this code makes all 'tempLiList' var. i.e li's background-color to green 
+    
+HTML collection and NodeList
+
+    document.getElementsByClassName('list-item') // it gives html collection
+
+    document.querySelectorAll('h2') //it gives output in form of NodeList
+
+    
+Converting any variale(contains html collection/nodeList) to Array
+
+    const tempClassList = document.getElementsByClassName('list-item') // html collection
+
+    Array.from(tempClassList) // it converts variable tempClassList to Array  
+ 
+    // we can also store it into vaiable
+
+    const myConvertedArray = Array.from(tempClassList) 
+
+    ***Using var. myConvertedArray, we can use forEach loop ******
+ 
+    myConvertedArray.forEach(function(li) {
+        li.style.color = "orange"
+    })
+    // now it changes text color to orange 
+    
+```

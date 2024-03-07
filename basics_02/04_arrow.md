@@ -1,5 +1,5 @@
 //this : it is used to refer current context of object 
-
+```javascript
 const user = {
     username: "hitesh", 
     price: 999,
@@ -114,7 +114,64 @@ console.log("\n++sum of no. using Arrow Function(=>) with implicit return along 
 const addTwo_04 =  (num1,num2) =>   ({username: "Krishna"} )   
   
 console.log("sum of using arrow fun. addTwo_04() with implicit return with object { }: ", addTwo_04(51,51));
+```
+```
+output:
+hitesh , welcome to website(this is used here)
+hitesh , welcome to our website(this is not used) 
+{
+  username: 'hitesh',
+  price: 999,
+  welcomeMessage: [Function: welcomeMessage]      
+}
 
+++++changing username's value of object user{}++++
+
+sam , welcome to website(this is used here)       
+sam , welcome to our website(this is not used)    
+{
+  username: 'sam',
+  price: 999,
+  welcomeMessage: [Function: welcomeMessage]
+}
+
+++++Checking current context of scope++++
+
+{}
+
+++++Using this keyword with function++++
+
+undefined
+
+++++Using this keyword with function declared with const chai_01 = fun() { } ++++
+
+undefined
+
+ ++++ Creating Arrow Function(=>) ++++
+
+arrow fun.  krishna
+{}
+
+ ++++ sum of no. using Arrow Function(=>) ++++
+
+sum using arrow fun. addTwo :  8
+
+ ++++ sum of no. using Arrow Function(=>) with implicit return ++++
+
+sum using arrow fun. addTwo_01 with implicit return:  10
+
+ ++++ sum of no. using Arrow Function(=>) with implicit return ++++
+
+sum using arrow fun. addTwo_02() with implicit return:  56
+
+ ++++ sum of no. using Arrow Function(=>) with implicit return ++++
+
+sum using arrow fun. addTwo_03() with implicit return:  102
+
+++sum of no. using Arrow Function(=>) with implicit return along with object{ }++
+
+sum of using arrow fun. addTwo_04() with implicit return with object { }:  { username: 'Krishna' }
+```
 
 
 

@@ -3,7 +3,7 @@
 // const tinderUser = {}           //  Non-Singleton object formed from Literals method
 
 //const tinderUser = new Object()
-
+```javascript
 const tinderUser = {}
 tinderUser.id = "123abc"
 tinderUser.name = "sammy"
@@ -121,3 +121,56 @@ console.log(courseInstructor) // we don't need to use course.courseInsturctor be
 
 const {coursename : Cname} = course // to get value of coursename, instead of using coursename we will just use Cname
 console.log(Cname);
+```
+```
+output:
+{ id: '123abc', name: 'sammy', isLoggedIn: false }
+
+Declaring another literal object
+
+krishna
+
+Combining multiple objects into single object
+
+{
+  obj1: { '1': 'a', '2': 'b' },
+  obj2: { '3': 'c', '4': 'd' },
+  obj3: { '5': 'e', '6': 'f' }
+}
+
+ Using Object.assign() method to merge different objects
+
+{ '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
+
+ Using spread operator(...) i.e 3 dots to merge different objects
+
+{ '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
+
+creating Objects of arrays
+
+
+displaying all details of object tinderUser
+
+{ id: '123abc', name: 'sammy', isLoggedIn: false }
+
+ accessing all keys of object tinderUser
+
+[ 'id', 'name', 'isLoggedIn' ]
+
+ accessing all values of object tinderUser
+
+[ '123abc', 'sammy', false ]
+
+ accessing all entries of object tinderUser
+
+[ [ 'id', '123abc' ], [ 'name', 'sammy' ], [ 'isLoggedIn', false ] ]
+
+hasOwnProperty() to check if any specific property is present in object tinderUser or not
+
+true
+
+Using Object Destructuring method
+
+Krishna
+js in hindi
+```

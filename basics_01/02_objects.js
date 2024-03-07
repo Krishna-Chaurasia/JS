@@ -121,35 +121,3 @@ console.log(courseInstructor) // we don't need to use course.courseInsturctor be
 
 const {coursename : Cname} = course // to get value of coursename, instead of using coursename we will just use Cname
 console.log(Cname);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

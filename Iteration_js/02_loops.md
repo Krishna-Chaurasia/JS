@@ -1,4 +1,5 @@
 // while loop 
+```javascript
 console.log("\n using while loop \n")
 
 let index = 0 
@@ -24,7 +25,26 @@ do {
     console.log(`Score is ${score}`)
     score++
 } while (score <=10);  
+```
+```
+output:
 
+ using while loop 
+
+value of index is 0
+value of index is 2
+value of index is 4
+
+ using array in loop
+
+value of index is flash
+value of index is batman
+value of index is superman
+
+ do while loop
+
+Score is 11
+```
 
 
 

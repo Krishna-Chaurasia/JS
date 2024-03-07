@@ -1,5 +1,4 @@
-
-
+```javascript
 const coding = ['js','ruby','java','python','cpp']
 // forEach does not return any value
 
@@ -42,7 +41,21 @@ myNums.forEach( (num) => {
       }
 }) 
 console.log(forEach_arr)
+```
+```
+output:
+using filter() method so that it return something
 
+[ 5, 6, 7, 8, 9, 10 ]
+
+ using filter() method with scope so that it return something
+
+[ 5, 6, 7, 8, 9, 10 ]
+
+using a forEach loop in such a way so that it returns something
+
+[ 5, 6, 7, 8, 9, 10 ]
+```
 
 
 

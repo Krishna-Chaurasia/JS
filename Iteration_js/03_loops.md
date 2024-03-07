@@ -1,5 +1,5 @@
 // for of  loop :: it is used for arrays 
-
+```javascript
 console.log("\n for-of loop on arrays \n")
 const arr = [1,2,3,4,5]
 
@@ -60,4 +60,55 @@ for (const [key, value] of myObject) {
 }
 
 */
+```
+```
+output:
 
+ for-of loop on arrays 
+
+1
+2
+3
+4
+5
+
+ for-of loop on strings
+
+Each char is H
+Each char is e
+Each char is l
+Each char is l
+Each char is o
+Each char is
+Each char is w
+Each char is o
+Each char is r
+Each char is l
+Each char is d
+
+ Using Map
+
+Map(4) {
+  'IN' => 'Ind',
+  'USA' => 'United States of America',
+  'Fr' => 'France',
+  'I' => 'India'
+}
+
+ for-of loop on map
+
+[ 'IN', 'Ind' ]
+[ 'USA', 'United States of America' ]
+[ 'Fr', 'France' ]
+[ 'I', 'India' ]
+
+ for-of loop on map with destructuring of key,value
+
+IN :-- Ind
+USA :-- United States of America
+Fr :-- France
+I :-- India
+
+ for-of loop on object
+
+```

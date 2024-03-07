@@ -11,8 +11,9 @@ Objects:  in js there are two ways of creating objects
 //***** Object Creation using Constructor method ******
 //Object.create
 
-//**********creating object using literas************
+//**********creating object using literals************
 // const JsUser ={}
+ ```javascript
  const JsUsers ={}     // { } is called as object 
 
 //***********declaration of Symbol *********
@@ -101,7 +102,63 @@ console.log("when we use console.log(JsUser.greeting) : ",JsUser1.greeting) // o
 console.log("when we use console.log(JsUser.greeting()) : ",JsUser1.greeting(),"\n") // o/p : undefined 
 
 console.log("when we use console.log(JsUser.greeting_two()) : ",JsUser1.greeting_two()) // o/p : hello Js User, Krishna ....... undefined
+```
+```
+output:
+1st way of accessing the object is : 
+console.log(Jsuser.email) :
 
+krishna@gamil.com
+
+2nd way of accessing the object is :
+console.log(Jsuser["email"] :
+
+krishna@gamil.com
+
+Accessing "full name" key which is strictly defined as string : 
+console.log(jsUser["full name"]) :
+
+Krishna Chaurasia
+
+Accessing Symbol key from object
+console.log(jsUser[mySym]) :
+
+mykey1
+string
+
+Changing object's values
+
+old eamil is :  krishna@gamil.com
+new eamil is :  kumar@chatgpt.com
+
+freezing object JsUser, so that no changes can be done :
+
+NO changes can be seeen :  kumar@chatgpt.com
+
+Displaying all object's values :
+console.log(JsUser)
+
+{
+  name: 'krishna',
+  'full name': 'Krishna Chaurasia',
+  age: 19,
+  location: 'Jaipur',
+  email: 'kumar@chatgpt.com',
+  isLoggedIn: false,
+  lastLoginDays: [ 'Monday', 'Saturday' ],
+  [Symbol(key1)]: 'mykey1'
+}
+
+declaring function as a value with object's(JsUser1) variable's key(greeting) :
+displaying greeting(key) of object  :
+
+when we use console.log(JsUser.greeting) :  [Function (anonymous)]
+Hello Js User
+when we use console.log(JsUser.greeting()) :  undefined
+
+Hello Js User, Krishna
+when we use console.log(JsUser.greeting_two()) :  undefined
+```
 
 
 

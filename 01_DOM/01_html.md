@@ -34,11 +34,11 @@
     </div>
 
     <pre>
-        console.log(document.baseURI)   // it is for base url 
-        console.log(document.links)    // to get all links 
+        console.log(document.baseURI)   // it is for base url of web page
+        console.log(document.links)    // to get all links which is html collection
         console.log(document.links[2])    // to get 2nd link 
-        console.log(document.getElementById('id name')))    // to get about id's data   
-        document.getElementById('firstHeading').innerHTML="<h3>chai aur code<h3>  // h1's data changes 
+        console.log(document.getElementById('id name'))    // to get about id's data   
+        document.getElementById('firstHeading').innerHTML="<h3>chai aur code<h3>  // h1's data changes to h3, tag with id 'firstHeading' 's data changes
     </pre>
 
     <pre>
@@ -48,6 +48,8 @@
         document.getElementById('title').class    // don't use .class it gives undefined
 
         document.getElementById('title').className    // gives className
+
+        document.getElementById('title').getAttribute  // gives error
 
         document.getElementById('title').getAttribute('class')  // gives class name 
 
@@ -63,8 +65,7 @@
 
         title.style.borderRadius = '15px' // will add borderRadius of 15px
 
-        title.textContent //will show all text/words inside title or var. 
-
+        title.textContent //will show all text/words even if it is hidden inside title or var. 
         title.innerText //will not show other other tags text/data of titile var.
 
         title.innerHTML //will show all words and tags name also used inside title variable 
@@ -79,13 +80,20 @@
 
     // querySelector(h1): it gives first h1 tag only not all h1 tags in the document
 
+    document.querySelector('#title') //will give tags having id name = title
+    
+    document.querySelector('.class') //will give tags having class name = heading
+
     document.querySelector('input[type="password"]') 
 
     document.querySelector('p') // gives 1st p tag 
+    document.querySelector('p:first-child') // gives 1st p's child 
 
     document.querySelector('ul')  // gives 1st ul tag and its details 
 
     const myul = document.querySelector('ul') // myul is vaiable here 
+
+     myul.querySelector('li') // 1st li
 
     const turnGreenLi = document.querySelector('li') // 1st li stored in var. turnGreenLi 
 
@@ -108,7 +116,12 @@
 
     const tempLiList =  document.querySelectorAll('li')// tempLiList is var. of 'li' with querySelectorAll; and here tempLiList gives all list data 
 
-    Note:: NodeList do not have all property of Array
+    tempLiList.style.color = 'green' // this will not work because specific list is not selected
+
+    tempLiList[0].style.color = 'green' // this will work because specific list is selected
+
+    // Check all prototype 
+    Note:: NodeList do not have all property of Array i.e NodeList and HTML collection are not pure array
 
     document.getElementsByClassName('list-item') //if 'li' tags has class name(list-item) only then this code gives 'li' list names
     
@@ -133,9 +146,9 @@
 
     <pre>
 
-    const tempClassList = document.getElementsByClassName('list-item') // html collection
+    const tempClassList = document.getElementsByClassName('list-item') // returns html collection 
 
-    Array.from(tempClassList) // it converts variable tempClassList to Array  
+    Array.from(tempClassList) // it converts variable tempClassList(HTML collection) to Array  
  
     // we can also store it into vaiable
 

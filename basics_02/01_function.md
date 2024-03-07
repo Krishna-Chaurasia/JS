@@ -42,8 +42,13 @@ function addTwoNumbers1(number1, number2){
 addTwoNumbers1(34,4) // this will not print anything because there no console.log() in function addTwoNumbers1()
 
 const result1 = addTwoNumbers1(34,4)   // will not print anything because there no console.log() in function addTwoNumbers1()
+```javascript
 console.log("result : ",result1)
-
+```
+```
+output:
+result :  38
+```
 // *****************displaying loginUserMessage() function**************
 
 console.log("\nDisplaying loginUserMessage\n")

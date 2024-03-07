@@ -1,4 +1,5 @@
 // forEach loop :: 
+```javascript
 console.log("\nUsing forEach loop on array \n ")
 
 const coding = ['js','ruby', 'java', 'python', 'cpp']
@@ -56,5 +57,46 @@ const myCoding = [
 myCoding.forEach((item) => {
     console.log(item.languageName);  // or just item 
 })
+```
+```
+output:
 
+Using forEach loop on array
+
+js
+ruby
+java
+python
+cpp
+
+ forEach loop on arrow function
+
+js
+ruby
+java
+python
+cpp
+
+ Creating function outside not within forEach loop
+
+js
+ruby
+java
+python
+cpp
+
+ Creating function(item, index, arr) forEach loop
+
+js 0 [ 'js', 'ruby', 'java', 'python', 'cpp' ]
+ruby 1 [ 'js', 'ruby', 'java', 'python', 'cpp' ]
+java 2 [ 'js', 'ruby', 'java', 'python', 'cpp' ]
+python 3 [ 'js', 'ruby', 'java', 'python', 'cpp' ]
+cpp 4 [ 'js', 'ruby', 'java', 'python', 'cpp' ]
+
+ Creating multiple objects inside a array
+
+Javascript
+Java
+Python
+```
 

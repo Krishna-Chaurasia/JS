@@ -1,5 +1,5 @@
 // reduce  : it has accumulator and currvalue ; mostly used in shopping cart features
-
+```javascript
 console.log("\n using redce method with function() just like map, filer, farEach etc.\n")
 const myNums = [1,2,3]
 // acc is accumulator and currval is currentvalue
@@ -45,7 +45,25 @@ const shopping = [
 
 const shoppingCart = shopping.reduce( (acc,item) => acc + item.price ,0) // 0 means acc starts  with 0
 console.log(shoppingCart) 
+```
+```
+output:
 
+ using redce method with function() just like map, filer, farEach etc.
+
+acc: 2 and currvalue: 1
+acc: 3 and currvalue: 2
+acc: 5 and currvalue: 3
+8
+
+ using redce method with arrow function() just like map, filer, farEach etc.
+
+6
+
+ Applying reduce with shopping cart
+
+16796
+```
  
 
 

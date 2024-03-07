@@ -6,6 +6,7 @@
 //syntax : (function's definition)() // (); : at the end of function() definition is called calling the function
                                      // and ; is used to end the function being invoked
 
+```javascript
 (function chai(){  //called as named IIFE becasuse it has chai as a name
     console.log(`BD connedted`);
 })();  // (); : here () used to call fun. and ; is used to end the function being invoked
@@ -21,7 +22,15 @@ console.log("\nCreating IIFE with arrow function (=>)\n");  // here ; is needed 
 ( (name) => { //called as simple IIFE becasuse it has no name
     console.log(`${name}, db connedted to IIFE`);
 } )('krishna')
+```
+```
+output:
+BD connedted
 
+Creating IIFE with arrow function (=>)
+
+krishna, db connedted to IIFE
+```
  
 
  

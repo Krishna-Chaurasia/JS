@@ -1,4 +1,5 @@
 // if 
+```javascript
 const condition = true
 if(condition){  // condition true then this scopw will execute if statements
   console.log("if");
@@ -132,7 +133,15 @@ let val1;
 console.log("\n Ternary Operator \n")
 
 // syntax :: condition ? true : false
+```
+```
+output:
+BD connedted
 
+Creating IIFE with arrow function (=>)
+
+krishna, db connedted to IIFE
+```
 
 
 

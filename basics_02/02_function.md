@@ -1,12 +1,17 @@
 // Rest Operator(...) : its notation is same like Spreadoperator(...), which means it checks the no. of arguments passed
 //                 to the function and returns all arguments in the form of array
-
+```javascript
 function calculateCartPrice(...num1){  // here only one parameter is given with rest operator, but if more than one agrument 
                                       // given then it will return all those argument in th form of array 
     return num1
 }
 
 console.log(calculateCartPrice(200, 400, 500, 2000))
+```
+```
+outpou:
+[ 200, 400, 500, 2000 ]
+```
 
 // ********creating new function *******
 console.log("\nCreating new function calculateCartPrice_01()\n")

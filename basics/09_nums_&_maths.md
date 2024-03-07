@@ -1,5 +1,5 @@
 /*
-
+```javascript
 const score = 400   //here score var. automatically defines itself as Number type
 console.log(score); // sometimes score may or may not be number datatype
 
@@ -35,13 +35,45 @@ console.log("\nnow working with number's toLocaleString() method \n")
 console.log(hundreds.toLocaleString());  // helps to read in easy way by adding commas on basis of Indian standard 
 console.log(hundreds.toLocaleString('en-US'));  // helps to read in easy way by adding commas on basis of US standard 
 console.log(typeof hundreds.toLocaleString()) // when we use toLocaleString() method on number type, then it changes number type to String datatype
+```
 
+```
+output:
+400
+[Number: 100.568]
+
+now working with number to string
+
+100.568
+string
+
+now working with number to string's length() 
+
+7
+number
+
+now working with number's toFixed() method
+
+100.57
+string
+
+now working with number's toPrecision() method
+
+23.9
+string
+
+now working with number's toLocaleString() method
+
+1,00,00,000
+10,000,000
+string
+```
 */
  
 //+++++++++++++++++++++  Maths ++++++++++++++++++++++
 
 // Math libreary is available inbuilt in js
-
+```javascript
 console.log(Math) // its gives object [Math] { }
 
 //******** Math library's abs() method *********
@@ -103,7 +135,48 @@ const min = 20
 const max = 40
 
 console.log(Math.floor(Math.random() * (max - min + 1)) + min) // we will get min 20
+```
+output:
 
+now working with Math library's abs() method   
+
+4
+4
+
+now working with Math library's round() method 
+
+-5
+-4
+-3
+4
+3
+4
+
+now working with Math library's ceil() & floor() method
+
+-5
+-5
+3
+3
+-4
+-4
+4
+4
+
+now working with Math library's min() & max() method
+
+1
+7
+
+now working with Math library's random() method
+
+0.32180461739530153
+8.259858996364418
+6.144951355900029
+2
+28
+
+```
 
  
 

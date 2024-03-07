@@ -57,10 +57,3 @@ for (const key in map) {
     console.log(key)   // it will give no output without any error
                       // because maps are not iterateable, so can't access like this
 }
-
-
-
-
-
-
-

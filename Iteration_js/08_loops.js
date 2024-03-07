@@ -24,14 +24,3 @@ const newNums_02 = myNumbers
 
                    
 console.log(newNums_02)
-
-
-
-
-
-
-
-
-
-
-

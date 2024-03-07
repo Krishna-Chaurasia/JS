@@ -11,7 +11,7 @@ Objects:  in js there are two ways of creating objects
 //***** Object Creation using Constructor method ******
 //Object.create
 
-//**********creating object using literas************
+//**********creating object using literals************
 // const JsUser ={}
  const JsUsers ={}     // { } is called as object 
 

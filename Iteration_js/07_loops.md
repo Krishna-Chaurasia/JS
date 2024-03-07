@@ -1,3 +1,4 @@
+```javascript
 const books = [ 
 
     {title: 'Book one', genre:'Fiction', publish: 1987,edition : 2004},
@@ -32,11 +33,31 @@ const userBooks_02 = books.filter( (bk) => {
  })
 
 console.log(userBooks_02);
+```
+```
+output:
 
+genre wise filter
 
+[
+  { title: 'Book two', genre: 'History', publish: 1988, edition: 2007 },
+  { title: 'Book six', genre: 'History', publish: 1887, edition: 2023 }
+]
 
+publish wise filter
 
+[
+  { title: 'Book one', genre: 'Fiction', publish: 1987, edition: 2004 }
+]
 
+edition wise filter
 
-
-
+[
+  {
+    title: 'Book five',
+    genre: 'Fiction',
+    publish: 1983,
+    edition: 2011
+  }
+]
+```

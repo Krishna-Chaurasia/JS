@@ -1,0 +1,113 @@
+```html
+<!--
+check websites: 
+api.github.com/users/Krishna-Chaurasia
+randomuser.me
+on google search : json formatter
+-->
+<!-- 
+    - previously : we send XML HttpRequest before the introduction of Fetch Request 
+    - XML http is a legacy 
+    - XML is used heavily AJAX in programming
+    - Ajax is Asynchronous JavaScript and XML or Ajax
+ -->
+
+
+ <!-- 
+    -document and console are not technically part of core javascript
+    - console.log() is actually debugging tool; it's a browser's dev tool
+    - run time of javascript inject these tool like console.log()
+    - javascript are run or executed by run time/nodejs/browser
+    - nodejs is implementation of v8 engine
+    - there are many engines which runs javascript one of them is V8 engine
+    - V8 engine's repository is available and it is written in c++
+    - powerful thing about javascript is that it is run by c++
+    - V8 engine gives debugging tools, api's access and console.log() is alos provided in V8 engine
+    - javascript's run time's features provides all these details 
+    - console.log() is present in V8 engine's repository's src folder>d8 folder> d8-console.cc >> in this it is present
+  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body style="background-color: #212121;">
+    
+ </body>
+ <script>
+     //XMLHttpRequest(); it's a method which is used to receive and send the request 
+     // XMLHttpRequest() is alomst a class so, we need to create object 
+     // to create a fresh object of any class use 'new' keyword before class name 'XMLHttpRequest()'
+     // e.g::    new XMLHttpRequest()  // now a object has been created of class XMLHttpRequest()
+     // store the created object in any variable of type const
+     // e.g:: const xhr = new XMLHttpRequest(); // here variable xhr stores object of class XMLHttpRequest() 
+ 
+     const xhr = new XMLHttpRequest();
+     const requestUrl = 'https://api.github.com/users/Krishna-Chaurasia';
+     xhr.open('GET', requestUrl) //open() : it;s a method which is used to open the request has minimum 2 parameters i.e method and url
+     // now we have an open request i.e xhr.open('GET', requestUrl) but not called yet i.e xhr.send(); or xhr.open() karne se request jati nhi hai
+
+     console.log(xhr.readyState); // it tells the value and prints 1 i.e OPENED
+     // To continuously track the state of the request that we have send, we can use the  xhr.onreadystatechange = function(){};
+     xhr.onreadystatechange = function(){ // this function will be executed every time the state changes i.e it is asynchronous prgramming which means someone is there to tell that something is happened so go to callback and execute this function again 
+         console.log(xhr.readyState);
+         if(xhr.readyState === 4 ){
+        console.log(this.responseText);// to get to know the function that responseText is part of xhr use this keyword
+                                // when we are taling about current context of the object we use 'this' keyword 
+     
+        const data = this.responseText;
+        console.log( typeof data); // o/p : string ; i.e the type of the data we are receiving/response from the url is string
+        console.log(data.followers); // o/p : undefined 
+        
+        
+        const data1 = JSON.parse(this.responseText); // parse will convert string to JSON format i.e object type 
+        console.log( typeof data1); // o/p : object
+        console.log(data1.following);  // now will tell the no. of following 
+        
+        const img = document.createElement('img');
+
+        // img.setAttribute('src',data1.avatar_url);
+        // img.setAttribute('height','200px');
+        // img.setAttribute('width','200px');
+
+        //or
+        
+        function setAttributes(element, attributes) {
+          for (const key in attributes) {
+              element.setAttribute(key, attributes[key]);
+           }
+       }
+
+        setAttributes(img, {
+          'src': data1.avatar_url,
+          'height': '200px',
+          'width': '200px'
+        });
+        
+
+        document.body.append(img);
+
+        console.log(data1.avatar_url);
+        console.log(data1.followers);
+      }
+     };
+      
+     xhr.send(); // now we have an open request i.e xhr.open('GET', requestUrl) and xhr.send(); is called
+
+/*    
+     responseText:
+    •	responseText is a property of the XMLHttpRequest object.
+
+    •	It contains the response data received from the server as a text string. This data could be HTML, XML, JSON, or any other format, depending on the server's response.
+
+    •	In the context of code, this.responseText retrieves the response text from the XMLHttpRequest object when the request state reaches 4 (indicating that the request is complete).
+
+*/
+
+
+
+ </script>
+ </html>
+```

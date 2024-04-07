@@ -1,0 +1,181 @@
+<!-- 
+    NOTE: 
+    Function Reference: means providing the definition of the function
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121;">
+    <button id="green">green</button>
+    <button id="orange">orange</button>
+
+    <button id="blue">blue</button>
+    <button id="grey">grey</button>
+    <button id="yellow">yellow</button>
+    <button id="red">red</button>
+    <button id="pink">pink</button>
+    <button id="violet">violet</button>
+    <button id="skyblue">skyblue</button>
+    <button id="lightgreen">lightgreen</button>
+    <button id="brown">brown</button>
+
+</body>
+<script>
+    //********** Closure ***********//
+//Closure : means returning function; so while returning the function(inner/outer) it will return the lexical scoping
+ // i.e top most function 
+
+    function makeFunc(){
+        const name = "MOzilla";
+        function displayName(){
+            console.log(name);
+        }
+         return displayName;   // returning function reference along with outer function i.e lexical scoping 
+        // return displayName(); // returning function itself along with outer function i.e lexical scoping 
+        
+        //both return statement are true 
+    }
+    const myFuncreference = makeFunc(); // storing function reference/function call in var. myFunc
+    myFuncreference();  //calling function named makeFunc()
+    
+    function makeFunc1(){
+        const name = "MOzilla";
+        function displayName(){
+            console.log(name);
+        }
+        // return displayName;   // returning function reference along with outer function i.e lexical scoping  
+        return displayName(); // returning function itself along with outer function i.e lexical scoping 
+        
+        //both return statement are true 
+    }
+    const myFunccall = makeFunc1(); // storing function reference/function call in var. myFunc
+    myFunccall;   // calling reference of function named makeFunc1()
+
+// ***** returning top most function ******* 
+
+    function makeFunc2(){
+        const name = "MOzilla";
+        function displayName(){
+            console.log(name);
+        }
+        //displayName();
+         
+        return makeFunc2;   // passing function reference i.e top most parent function
+        // return makeFunc2(); // passing function itself also i.e top most parent function
+        
+        //both return statement are true 
+    }
+    const myFuncParent = makeFunc2();// Invokes makeFunc2() and stores its result in myFuncParent
+    myFuncParent();  // Invokes the function referenced by myFuncParent
+    
+    /*
+    This calls the function makeFunc2 again. Since makeFunc2 returns the function makeFunc2 itself, 
+    the inner function displayName() is never executed, and therefore, name is never printed.
+
+    If you want to see the output of name, you should return and invoke displayName instead of makeFunc2
+     from makeFunc2
+  */
+
+ //** invoking displayName() inside makeFunc3() **//
+
+ function makeFunc3(){
+        const name = "MOzilla";
+        function displayName(){
+            console.log(name);
+        }
+        displayName();
+         
+        return makeFunc3;   // passing function reference i.e top most parent function
+        // return makeFunc2(); // passing function itself also i.e top most parent function
+        
+        //both return statement are true 
+    }
+    const myFuncParent1 = makeFunc3();//Prints name. also Invokes makeFunc3() and stores its result in myFuncParent
+    myFuncParent1();  // Prints name. also Invokes the function referenced by myFuncParent
+    
+    /*
+    makeFunc3 is invoked immediately after it's defined, so when makeFunc3 is called, it executes displayName() 
+    right away. This is why "MOzilla" is printed the first time.
+
+    Then, makeFunc3 returns a reference to itself, So, when you assign myFuncParent1 to makeFunc3(), 
+    myFuncParent1 holds a reference to the makeFunc3 function.
+
+   When you call myFuncParent1(), it invokes makeFunc3() again, which executes displayName() once more,
+    resulting in "MOzilla" being printed a second time.
+
+   To summarize:
+
+   The first "MOzilla" is printed when makeFunc3 is initially called because it executes displayName() 
+   within its body.
+   The second "MOzilla" is printed when makeFunc3 is called again through myFuncParent1(),
+    which executes displayName() again.
+    */
+
+</script>
+
+<!-- 
+    Real time use case of Closure in below script
+ -->
+<script>
+
+
+
+    document.querySelector('#orange').addEventListener('click',function(e){
+        document.querySelector('body').style.backgroundColor = 'orange';
+    })
+
+    //or 
+    //onclick : needs function reference; onclick is an event listener; onclick = function(){}
+    document.getElementById('green').onclick = function()
+    {
+        document.body.style.backgroundColor = 'green'; 
+    }
+
+    //Question : What if we want to change the background color of body when there are many of button
+    // Ans : apply the priciple of Don't repeat the code
+     
+    // Method 1: 
+    function clickHandler(color){
+        //document.body.style.backgroundColor = `${color}`;
+
+       function changeColor(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+        return changeColor;
+        
+        //or
+        /*
+         return function changeColor(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+        //return changeColor;
+         */
+    } 
+    document.getElementById('yellow').onclick = clickHandler("yellow"); //clickHandler("yellow)
+    document.getElementById('blue').onclick = clickHandler("blue");
+
+
+   //Method2
+
+   function changeColor1(color){
+       document.body.style.backgroundColor = color;
+    //    return function changeColor(){
+    //         document.body.style.backgroundColor = color;
+    //     }
+   }
+   
+   var buttons = document.getElementsByTagName('button');
+   for(var i=0;i<buttons.length;i++){
+        buttons[i].addEventListener('click',function(){
+            //calling the function
+            changeColor1(this.textContent.toLowerCase());
+        });
+   }
+</script>
+
+</html>

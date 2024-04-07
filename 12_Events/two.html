@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2> Amazing Images </h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/20367982/pexels-photo-20367982/free-photo-of-a-small-cabin-in-the-middle-of-a-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/2423157/pexels-photo-2423157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="single_kitten"
+                    src="https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="kittens"
+                    src="https://images.pexels.com/photos/8194266/pexels-photo-8194266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="cart"
+                    src="https://images.pexels.com/photos/1583571/pexels-photo-1583571.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="brick"
+                    src="https://images.pexels.com/photos/4851642/pexels-photo-4851642.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="buff"
+                    src="https://images.pexels.com/photos/5459140/pexels-photo-5459140.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop"></li>
+
+            <li><img width="200px" id="harvest"
+                    src="https://media.istockphoto.com/id/1446460244/photo/young-indian-woman-cutting-a-wheat-india.jpg?b=1&s=612x612&w=0&k=20&c=5ytQ4vnrWHzLoO0CdJOoqA9N01_XNZcKGR6kkD_OIgs="
+                    alt="photoshop"></li>
+
+            <li><img width="200px" id="cattle"
+                    src="https://images.pexels.com/photos/5205221/pexels-photo-5205221.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop"></li>
+            <!-- id="cattle" ; onclick function is applied using js script -->
+
+            <li><img width="200px" id="train"
+                    src="https://images.pexels.com/photos/4805704/pexels-photo-4805704.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="photoshop" onclick="alert('mumbai clicked in HTML attribute')"></li>
+          <!--  onclick="alert('hello')" ; in above li tag will show alert but this approach is not recommended
+           as it is not feasible for big projects-->
+
+           
+            <li><a style="color: aliceblue;" href="https://www.google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+//Q: If we click on image then it should be disappeared
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//     console.log(e);  // tells about all events that can be used
+//     console.log(e.target);//it tells the actual tagName from where the info. is coming i.e if we click on <image> which 
+//                       // is under <li> tag then it will show output as <img> tag
+//                       // if we chick on empty space which is <li>, so o/p is li because empty space is under <li> tag
+//     console.log(e.target.parentNode);//it tells parent's tagName of the source node(contains actual info,) 
+//                    // If we click on img then <img>'s parent tag will show i.e output as <li>
+//                       // If we click on empty space which is <li> then its parent node will be <ul>, so o/p is <ul> 
+                        
+// },false)
+
+// Ans:
+
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //      console.log(e.target.parentNode);//will show ul if clicked outside the image which means li's parentNode i.e 'ul'
+    //      // **to reomve e.target.parentNode i.e reomving particular image on click
+    //      let removeIt = e.target.parentNode
+    //      removeIt.remove();  // will reomve ul if clicked outside the image which means li's parentNode 'ul'
+                                // and will remove li if we clicked on <img> whose parent is <li>
+    //      console.log(removeIt); // gives li
+    //      console.log(e.target); // will give img tag info.
+    // },false)
+
+// ** or ** 
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//      console.log(e.target.parentNode); 
+//      // **to reomve e.target.parentNode i.e reomving particular image on click another method
+//      let removeIt = e.target.parentNode // stores acutal tag's parent tag
+
+//    removeIt.parentNode.removeChild(removeIt); //'reomveIt' gives 'li'(if click on image), '.parentNode' gives 'ul', 
+//                                               //reomveChild('reomeIt') it reomves its child i.e li
+//     console.log(removeIt); // gives li
+//     console.log(e.target); // will give img tag info.
+
+// //      let child = e.target //stores actual tag
+// //      removeIt.removeChild(child); //it must have 1 argument 
+// },false)  
+
+// *** best method to reomve image ***
+
+document.querySelector('#images').addEventListener('click',function(e){
+     console.log(e);
+     console.log(e.target);
+     console.log(e.target.parentNode);   
+     
+     console.log(e.target.tagName);  // it tells the source tag of the element i.e tag Name if we click on image then img
+                                //tag shows if we click on empty space then it shows li tag 
+     if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);  // will show the id of the image tag
+        let removeIt = e.target.parentNode
+        removeIt.remove();
+     }
+     
+},false)
+
+
+</script>
+</html>

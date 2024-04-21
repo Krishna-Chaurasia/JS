@@ -6,7 +6,7 @@ console.log("Krishna Chaurasia");
 -after successfully installation; it will show in package.json's 
     dependencies's object as "express": "^4.19.2"
 - It will aslo create a package-lock.json file in the same folder
-- it will also create node_modules file in the same folder 
+- it will also create node_modules files in the same folder 
   
 */
 
